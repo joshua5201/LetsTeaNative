@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { View, Text, Navigator, Image, StyleSheet } from 'react-native';
 import { Card, Button } from 'react-native-material-design';
+import { Actions } from 'react-native-router-flux';
 
 export default class ChooseScene extends Component {
     render() {
         tea = this.props.tea;
+        const moveToNext = () => Actions.FindDevice({tea: tea});
         return (
         <Card>
             <Card.Media image={<Image source={tea.image}/>} overlay> 
@@ -14,19 +16,10 @@ export default class ChooseScene extends Component {
                 <Text>{tea.description}</Text>
             </Card.Body>
             <Card.Actions position="right">
-                <Button text="開始泡茶" onPress={ this._navigate.bind(this) } />
+                <Button text="開始泡茶" onPress={ moveToNext } />
             </Card.Actions>
         </Card>
         );
-    }
-
-    _navigate() {
-        this.props.navigator.push({
-            name: 'PutTea',
-            passProps: {
-                tea: this.props.tea
-            }
-        })
     }
 }
 

@@ -1,21 +1,16 @@
 import React, { Component } from 'react';
-import { ScrollView, View, Text, Navigator } from 'react-native';
+import { ScrollView, View, Text } from 'react-native';
 import { Card, Button } from 'react-native-material-design';
 import TeaElement from '../components/TeaElement';
 import { v4 as uuid } from 'node-uuid';
+import { Actions } from 'react-native-router-flux';
 
 export default class ChooseScene extends Component {
-    static get defaultProps() {
-        return {
-            title: "Let's Tea"
-        };
-    }
-
     render() {
         return ( 
             <ScrollView style={styles.scene}>
                 { teas.map(function(tea) {
-                    return (<TeaElement key={uuid()} tea={tea} navigator={navigator} />)
+                    return (<TeaElement key={uuid()} tea={tea} />)
                 })}
             </ScrollView>
         );
