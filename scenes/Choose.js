@@ -18,7 +18,7 @@ export default class ChooseScene extends Component {
 }
 
 const teas = [
-    { name: '綠茶', description: '綠茶！綠色的茶！Green tea is so green', temperature: 89.2, time: 123, amount: 32.1, image: require("./../img/green_tea.jpg") },
+    { name: '綠茶', description: '綠茶！綠色的茶！Green tea is so green', temperature: 89.2, time: 35, amount: 32.1, image: require("./../img/green_tea.jpg") },
     { name: '紅茶', description: '紅茶！紅紅的茶！Black tea is not so black', temperature: 87.2, time: 103, amount: 22.1, image: require('./../img/black_tea.jpg') }
 ]
 

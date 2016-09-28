@@ -11,7 +11,9 @@
     "react": "^15.3.2",
     "react-native": "^0.34.1",
     "react-native-bluetooth-serial": "^0.1.5",
+    "react-native-button": "^1.7.1",
     "react-native-material-design": "^0.3.7",
-    "react-native-router-flux": "^3.35.0"
+    "react-native-router-flux": "^3.35.0",
+    "react-timer-mixin": "^0.13.3"
   }
 }

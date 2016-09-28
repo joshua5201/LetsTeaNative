@@ -5,7 +5,7 @@ import { Actions } from 'react-native-router-flux';
 
 export default class ChooseScene extends Component {
     render() {
-        tea = this.props.tea;
+        let tea = this.props.tea;
         const moveToNext = () => Actions.FindDevice({tea: tea});
         return (
         <Card>

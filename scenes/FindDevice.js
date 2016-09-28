@@ -8,11 +8,11 @@ import { Buffer } from 'buffer'
 global.Buffer = Buffer
 
 export default class FindDeviceScene extends Component {
-    constructor (props) {
+    constructor(props) {
         super(props);
         this.state = {
             discovering: false,
-            devices: [],
+            devices: [{name: 'test', id: 'stm32-5566'}],
             connected: false
         }
     }
@@ -60,7 +60,7 @@ export default class FindDeviceScene extends Component {
         .catch((err) => Toast.showLongBottom(err))
     }
 
-    moveToNext() {
+    moveToNext(device) {
         Actions.PutTea({tea: this.props.tea, device: device})
     }
 
@@ -76,7 +76,7 @@ export default class FindDeviceScene extends Component {
                                     <Text>{device.id} </Text>
                                 </Card.Body>
                                 <Card.Actions position="right">
-                                    <Button text="綁定裝置" onPress={ this.moveToNext.bind(this, device) } />
+                                    <Button text="綁定裝置" onPress={ () => this.moveToNext(device) } />
                                 </Card.Actions>
                             </Card>
                         )
@@ -84,7 +84,7 @@ export default class FindDeviceScene extends Component {
                 </ScrollView>
             )
         } else {
-            return (
+             return (
                 <ScrollView style={styles.scene}>
                     <Card>
                         <Card.Body>
